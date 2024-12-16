@@ -1,0 +1,384 @@
+var routerIP = "192.168.50.1";
+
+// 自定义规则配置
+const customRules = [
+  "DOMAIN-SUFFIX,parsec.app,Proxy",
+  "DOMAIN-SUFFIX,chatgpt.com,美国选择",
+  "DOMAIN-SUFFIX,vsassets.io,Proxy",
+  "DOMAIN-SUFFIX,ipblocker.io,REJECT",
+  "DOMAIN-SUFFIX,ccmdls.adobe.com,DIRECT",
+  "DOMAIN-SUFFIX,cmacked.com,Proxy",
+  "DOMAIN-SUFFIX,qt.io,DIRECT",
+  "DOMAIN-SUFFIX,fliqlo.com,Proxy",
+  "DOMAIN-SUFFIX,stripe.com,Proxy",
+  "RULE-SET,Lan,DIRECT",
+  "RULE-SET,Direct,DIRECT",
+  "RULE-SET,Advertising_Classical,广告过滤",
+  "RULE-SET,Download,DIRECT",
+  "RULE-SET,PrivateTracker,DIRECT",
+  "RULE-SET,ZhihuAds,广告过滤",
+  "RULE-SET,ChinaMax_Classical,DIRECT",
+  "RULE-SET,Apple_Classical,DIRECT",
+  "RULE-SET,Bing,DIRECT",
+  "RULE-SET,OpenAI,美国选择",
+  "RULE-SET,Microsoft,DIRECT",
+  "RULE-SET,GitHub,Proxy",
+  "RULE-SET,Google,Proxy",
+  "RULE-SET,Adobe,香港选择",
+  "RULE-SET,QuickConnect,DIRECT",
+  "RULE-SET,Synology,DIRECT",
+  "RULE-SET,SteamCN,DIRECT",
+  "RULE-SET,Steam,Proxy",
+  "RULE-SET,GameDownloadCN,DIRECT",
+  "RULE-SET,Copilot,美国选择",
+  "RULE-SET,Docker,Proxy",
+  "RULE-SET,ChinaDNS,DIRECT",
+  "RULE-SET,DNS,DIRECT",
+  "RULE-SET,EA,Proxy",
+  "RULE-SET,Ubisoft,Proxy",
+  "RULE-SET,2KGames,Proxy",
+  "RULE-SET,Gog,Proxy",
+  "RULE-SET,GlobalMedia_Classical,Proxy",
+  "RULE-SET,Global_Classical,Proxy",
+  "GEOIP,LAN,DIRECT",
+  "GEOIP,CN,DIRECT"
+];
+// 代理组通用配置
+const groupBaseOption = {
+  "interval": 600,
+  "timeout": 3000,
+  "url": "https://www.google.com/generate_204",
+  "max-failed-times": 3,
+  "hidden": false
+};
+// 自定义代理组配置
+const customDefaultProxyGroups = {
+  ...groupBaseOption,
+  "type": "url-test",
+  "tolerance": 100,
+  "include-all": true,
+  "lazy": false,
+};
+const customProxyGroups = [
+  {
+    ...groupBaseOption,
+    "name": "Proxy",
+    "type": "select",
+    "proxies": ["香港选择", "美国选择", "日本选择"],
+    "include-all": true,
+    "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg"
+  },
+  {
+    ...groupBaseOption,
+    "name": "香港选择",
+    "type": "fallback",
+    // "proxies": ["香港自动"],
+    "include-all": true,
+    "filter": "香港",
+    "exclude-filter": "1\.5",
+    "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+  },
+  {
+    ...groupBaseOption,
+    "name": "美国选择",
+    "type": "fallback",
+    // "proxies": ["美国自动"],
+    "include-all": true,
+    "filter": "美国",
+    "exclude-filter": "1\.5",
+    "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png"
+  },
+  {
+    ...groupBaseOption,
+    "name": "日本选择",
+    "type": "fallback",
+    "include-all": true,
+    "filter": "日本",
+    "exclude-filter": "1\.5",
+    "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png"
+  },
+  // {
+  //   ...customDefaultProxyGroups,
+  //   "name": "香港自动",
+  //   "filter": "香港",
+  //   "exclude-filter": "1\.5",
+  //   "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+  // },
+  // {
+  //   ...customDefaultProxyGroups,
+  //   "name": "美国自动",
+  //   "filter": "美国",
+  //   "exclude-filter": "1\.5",
+  //   "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png"
+  // },
+  {
+    ...groupBaseOption,
+    "name": "广告过滤",
+    "type": "select",
+    "proxies": ["REJECT", "DIRECT"],
+    "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/bug.svg"
+  },
+  {
+    ...groupBaseOption,
+    "name": "漏网之鱼",
+    "type": "select",
+    "proxies": ["DIRECT", "Proxy"],
+    "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/fish.svg"
+  }
+];
+// 规则集通用配置
+const ruleProviderCommon = {
+  "type": "http",
+  "format": "yaml",
+  "interval": 86400
+};
+// 自定义规则集配置
+// https://github.com/Loyalsoldier/clash-rules
+// https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash
+const customRuleProviders = {
+  // "": {
+  //   ...ruleProviderCommon,
+  //   "behavior": "classical",
+  //   "url": "",
+  //   "path": "./ruleset/.yaml",
+  // },
+  "Lan": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Lan/Lan.yaml",
+    "path": "./ruleset/Lan.yaml",
+  },
+  "Direct": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Direct/Direct.yaml",
+    "path": "./ruleset/Direct.yaml",
+  },
+  "Advertising_Classical": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising_Classical.yaml",
+    "path": "./ruleset/Advertising_Classical.yaml",
+  },
+  "Download": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Download/Download.yaml",
+    "path": "./ruleset/Download.yaml",
+  },
+  "PrivateTracker": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PrivateTracker/PrivateTracker.yaml",
+    "path": "./ruleset/PrivateTracker.yaml",
+  },
+  "ZhihuAds": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ZhihuAds/ZhihuAds.yaml",
+    "path": "./ruleset/ZhihuAds.yaml",
+  },
+  "ChinaMax_Classical": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml",
+    "path": "./ruleset/ChinaMax_Classical.yaml",
+  },
+  "Apple_Classical": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple_Classical.yaml",
+    "path": "./ruleset/Apple_Classical.yaml",
+  },
+  "Bing": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Bing/Bing.yaml",
+    "path": "./ruleset/Bing.yaml",
+  },
+  "OpenAI": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml",
+    "path": "./ruleset/OpenAI.yaml",
+  },
+  "Microsoft": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml",
+    "path": "./ruleset/Microsoft.yaml",
+  },
+  "GitHub": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml",
+    "path": "./ruleset/GitHub.yaml",
+  },
+  "Google": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml",
+    "path": "./ruleset/Google.yaml",
+  },
+  "Adobe": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Adobe/Adobe.yaml",
+    "path": "./ruleset/Adobe.yaml",
+  },
+  "QuickConnect": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/QuickConnect/QuickConnect.yaml",
+    "path": "./ruleset/QuickConnect.yaml",
+  },
+  "Synology": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Synology/Synology.yaml",
+    "path": "./ruleset/Synology.yaml",
+  },
+  "SteamCN": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/SteamCN/SteamCN.yaml",
+    "path": "./ruleset/SteamCN.yaml",
+  },
+  "Steam": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml",
+    "path": "./ruleset/Steam.yaml",
+  },
+  "GameDownloadCN": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Game/GameDownloadCN/GameDownloadCN.yaml",
+    "path": "./ruleset/GameDownloadCN.yaml",
+  },
+  "Copilot": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Copilot/Copilot.yaml",
+    "path": "./ruleset/Copilot.yaml",
+  },
+  "Docker": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Docker/Docker.yaml",
+    "path": "./ruleset/Docker.yaml",
+  },
+  "ChinaDNS": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaDNS/ChinaDNS.yaml",
+    "path": "./ruleset/ChinaDNS.yaml",
+  },
+  "DNS": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/DNS/DNS.yaml",
+    "path": "./ruleset/DNS.yaml",
+  },
+  "EA": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/EA/EA.yaml",
+    "path": "./ruleset/EA.yaml",
+  },
+  "Ubisoft": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Ubisoft/Ubisoft.yaml",
+    "path": "./ruleset/Ubisoft.yaml",
+  },
+  "2KGames": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/2KGames/2KGames.yaml",
+    "path": "./ruleset/2KGames.yaml",
+  },
+  "Gog": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gog/Gog.yaml",
+    "path": "./ruleset/Gog.yaml",
+  },
+  "GlobalMedia_Classical": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml",
+    "path": "./ruleset/GlobalMedia_Classical.yaml",
+  },
+  "Global_Classical": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global_Classical.yaml",
+    "path": "./ruleset/Global_Classical.yaml",
+  },
+}
+
+// 程序入口
+function main(config, profileName) {
+  for (let excludeName of ["Proxy", "Auto", "♻️自动选择", "🔯故障转移"]) {
+    for (let i in config["proxy-groups"]) {
+      if (config["proxy-groups"][i]["name"] == excludeName) {
+        config["proxy-groups"].splice(i, 1);
+      }
+    }
+  }
+  // config["proxy-groups"].unshift({
+  //   ...customDefaultProxyGroups,
+  //   "name": "Proxy"
+  // });
+  config["proxy-groups"].unshift(...customProxyGroups);
+
+  config["rule-providers"] = customRuleProviders;
+  config["rules"].unshift(...customRules);
+  for (let i in config["rules"]) {
+    if (config["rules"][i].startsWith("MATCH")) {
+      config["rules"][i] = "MATCH,漏网之鱼";
+    }
+  }
+
+  config["dns"]["enable"] = true;
+  config["dns"]["use-system-hosts"] = true;
+  config["dns"]["enhanced-mode"] = "fake-ip";
+  config["dns"]["fake-ip-filter"] = [
+    "rrabbit.xyz",
+    "+.rrabbit.xyz",
+    "xiaoya.host",
+    "d.com",
+    // 本地主机/设备
+    "+.lan",
+    "+.local",
+    // Windows网络出现小地球图标
+    "+.msftconnecttest.com",
+    "+.msftncsi.com",
+    // QQ快速登录检测失败
+    "localhost.ptlogin2.qq.com",
+    "localhost.sec.qq.com",
+    // 微信快速登录检测失败
+    "localhost.work.weixin.qq.com"
+  ];
+  config["dns"]["default-nameserver"] = [routerIP, "202.106.195.68", "202.106.46.151"];
+  if (!("nameserver" in config["dns"])) {
+    config["dns"]["nameserver"] = [];
+  }
+  for (let i in config["dns"]["nameserver"]) {
+    if (config["dns"]["nameserver"][i] in config["dns"]["default-nameserver"]) {
+      config["dns"]["nameserver"].splice(i, 1);
+    }
+  }
+  config["dns"]["nameserver"].unshift(...config["dns"]["default-nameserver"]);
+  if (!("nameserver-policy" in config["dns"])) {
+    config["dns"]["nameserver-policy"] = {};
+  }
+  config["dns"]["nameserver-policy"]["rrabbit.xyz"] = routerIP;
+  config["dns"]["nameserver-policy"]["+.rrabbit.xyz"] = routerIP;
+  config["dns"]["nameserver-policy"]["xiaoya.host"] = routerIP;
+  config["dns"]["nameserver-policy"]["d.com"] = routerIP;
+
+  // 返回修改后的配置
+  return config;
+}
