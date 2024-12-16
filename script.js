@@ -1,7 +1,15 @@
 var routerIP = "192.168.50.1";
+var DNS1 = "202.106.195.68";
+var DNS2 = "202.106.46.151";
 
 // 自定义规则配置
 const customRules = [
+  "DOMAIN-SUFFIX,metacubex.one,Proxy",
+  "DOMAIN-SUFFIX,clashverge.dev,Proxy",
+  "DOMAIN-SUFFIX,ipleak.net,Proxy",
+  "DOMAIN-SUFFIX,whatismyipaddress.com,Proxy",
+  "DOMAIN-SUFFIX,ipaddress.my,Proxy",
+  "DOMAIN-SUFFIX,ipv6-test.com,Proxy",
   "DOMAIN-SUFFIX,parsec.app,Proxy",
   "DOMAIN-SUFFIX,chatgpt.com,美国选择",
   "DOMAIN-SUFFIX,vsassets.io,Proxy",
@@ -361,7 +369,7 @@ function main(config, profileName) {
     // 微信快速登录检测失败
     "localhost.work.weixin.qq.com"
   ];
-  config["dns"]["default-nameserver"] = [routerIP, "202.106.195.68", "202.106.46.151"];
+  config["dns"]["default-nameserver"] = [routerIP, DNS1, DNS2];
   if (!("nameserver" in config["dns"])) {
     config["dns"]["nameserver"] = [];
   }
