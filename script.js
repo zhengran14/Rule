@@ -2,6 +2,7 @@ var routerIP = "192.168.50.1";
 var DNS1 = "202.106.195.68";
 var DNS2 = "202.106.46.151";
 
+
 // 自定义规则配置
 const customRules = [
   "DOMAIN-SUFFIX,metacubex.one,Proxy",
@@ -63,7 +64,7 @@ const groupBaseOption = {
 const customDefaultProxyGroups = {
   ...groupBaseOption,
   "type": "url-test",
-  "tolerance": 100,
+  "tolerance": 50,
   "include-all": true,
   "lazy": false,
 };
@@ -77,29 +78,32 @@ const customProxyGroups = [
     "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg"
   },
   {
-    ...groupBaseOption,
+    ...customDefaultProxyGroups,
     "name": "香港选择",
-    "type": "fallback",
+    // "type": "fallback",
     // "proxies": ["香港自动"],
+    "interval": 300,
     "include-all": true,
     "filter": "香港",
     "exclude-filter": "1\.5",
     "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
   },
   {
-    ...groupBaseOption,
+    ...customDefaultProxyGroups,
     "name": "美国选择",
-    "type": "fallback",
+    // "type": "fallback",
     // "proxies": ["美国自动"],
+    "interval": 300,
     "include-all": true,
     "filter": "美国",
     "exclude-filter": "1\.5",
     "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png"
   },
   {
-    ...groupBaseOption,
+    ...customDefaultProxyGroups,
     "name": "日本选择",
-    "type": "fallback",
+    // "type": "fallback",
+    "interval": 300,
     "include-all": true,
     "filter": "日本",
     "exclude-filter": "1\.5",
