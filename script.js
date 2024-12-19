@@ -5,6 +5,7 @@ var DNS2 = "202.106.46.151";
 
 // 自定义规则配置
 const customRules = [
+  "DOMAIN-SUFFIX,plex.tv,Proxy",
   "DOMAIN-SUFFIX,parallels.com,DIRECT",
   "DOMAIN-SUFFIX,parallels.cn,DIRECT",
   "DOMAIN-SUFFIX,metacubex.one,Proxy",
