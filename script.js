@@ -5,7 +5,6 @@ var DNS2 = "202.106.46.151";
 
 // 自定义规则配置
 const customRules = [
-  "DOMAIN-SUFFIX,jumpshop-online.com,日本选择",
   "DOMAIN-SUFFIX,plex.tv,Proxy",
   "DOMAIN-SUFFIX,parallels.com,DIRECT",
   "DOMAIN-SUFFIX,parallels.cn,DIRECT",
