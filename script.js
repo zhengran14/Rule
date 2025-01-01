@@ -41,8 +41,8 @@ const customRules = [
   "RULE-SET,QuickConnect,DIRECT",
   "RULE-SET,Synology,DIRECT",
   "RULE-SET,SteamCN,DIRECT",
-  "RULE-SET,Steam,Proxy",
   "RULE-SET,GameDownloadCN,DIRECT",
+  "RULE-SET,Steam,Proxy",
   "RULE-SET,Docker,Proxy",
   "RULE-SET,ChinaDNS,DIRECT",
   "RULE-SET,DNS,DIRECT",
@@ -333,15 +333,50 @@ const customRuleProviders = {
   },
 }
 
+const excludeProxyGroup = ["Proxy", "Auto", "♻️自动选择", "🔯故障转移", "Final"];
+const otherProxyGroup1 = ["Proxies"];
+const otherProxyGroup2 = ["Microsoft", "Apple", "Bilibili"];
+const otherProxyGroup3 = ["OpenAI", "PayPal"];
+
 // 程序入口
 function main(config, profileName) {
-  for (let excludeName of ["Proxy", "Auto", "♻️自动选择", "🔯故障转移"]) {
-    for (let i in config["proxy-groups"]) {
-      if (config["proxy-groups"][i]["name"] == excludeName) {
-        config["proxy-groups"].splice(i, 1);
+  config["proxy-groups"] = config["proxy-groups"]
+    .filter(group => {
+      if ("name" in group) {
+        // 如果需要排除的组名，返回 false，表示移除该元素
+        if (excludeProxyGroup.includes(group["name"])) {
+          return false;
+        }
+        if (otherProxyGroup1.includes(group["name"])) {
+          Object.assign(group, {
+            ...groupBaseOption,
+            "name": group["name"],
+            "type": "select",
+            "proxies": ["Proxy", "DIRECT"]
+          });
+        }
+        else if (otherProxyGroup2.includes(group["name"])) {
+          Object.assign(group, {
+            ...groupBaseOption,
+            "name": group["name"],
+            "type": "select",
+            "proxies": ["DIRECT", "Proxy"]
+          });
+        }
+        else if (otherProxyGroup3.includes(group["name"])) {
+          Object.assign(group, {
+            ...groupBaseOption,
+            "name": group["name"],
+            "type": "select",
+            "proxies": ["美国选择", "Proxy"]
+          });
+        }
       }
-    }
-  }
+
+      // 默认保留该元素
+      return true;
+    });
+
   // config["proxy-groups"].unshift({
   //   ...customDefaultProxyGroups,
   //   "name": "Proxy"
