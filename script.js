@@ -5,6 +5,7 @@ var DNS2 = "202.106.46.151";
 
 // 自定义规则配置
 const customRules = [
+  "DOMAIN-SUFFIX,vcpkg.link,Proxy",
   "DOMAIN-SUFFIX,codeproject.com,Proxy",
   "DOMAIN-SUFFIX,plex.tv,Proxy",
   "DOMAIN-SUFFIX,parallels.com,DIRECT",
