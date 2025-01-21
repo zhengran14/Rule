@@ -25,7 +25,7 @@ const customRules = [
   "DOMAIN-SUFFIX,ipaddress.my,Proxy",
   "DOMAIN-SUFFIX,ipv6-test.com,Proxy",
   "DOMAIN-SUFFIX,parsec.app,Proxy",
-  "DOMAIN-SUFFIX,chatgpt.com,美国选择",
+  "DOMAIN-SUFFIX,chatgpt.com,AI",
   "DOMAIN-SUFFIX,vsassets.io,Proxy",
   "DOMAIN-SUFFIX,ipblocker.io,REJECT",
   "DOMAIN-SUFFIX,ccmdls.adobe.com,DIRECT",
@@ -42,8 +42,8 @@ const customRules = [
   "RULE-SET,ChinaMax_Classical,DIRECT",
   "RULE-SET,Apple_Classical,DIRECT",
   "RULE-SET,Bing,DIRECT",
-  "RULE-SET,OpenAI,美国选择",
-  "RULE-SET,Copilot,美国选择",
+  "RULE-SET,OpenAI,AI",
+  "RULE-SET,Copilot,AI",
   "RULE-SET,Microsoft,DIRECT",
   "RULE-SET,GitHub,Proxy",
   "RULE-SET,Google,Proxy",
@@ -86,7 +86,7 @@ const customProxyGroups = [
     ...groupBaseOption,
     "name": "Proxy",
     "type": "select",
-    "proxies": ["香港选择", "美国选择", "日本选择"],
+    "proxies": ["香港选择", "美国选择", "日本选择", "新加坡选择", "DIRECT"],
     "include-all": true,
     "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg"
   },
@@ -121,6 +121,23 @@ const customProxyGroups = [
     "filter": "日本",
     "exclude-filter": "1\.5",
     "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png"
+  },
+  {
+    ...customDefaultProxyGroups,
+    "name": "新加坡选择",
+    "interval": 300,
+    "include-all": true,
+    "filter": "新加坡",
+    "exclude-filter": "1\.5",
+    "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png"
+  },
+  {
+    ...groupBaseOption,
+    "name": "AI",
+    "type": "select",
+    "proxies": ["美国选择", "新加坡选择", "香港选择", "日本选择", "Proxy", "DIRECT"],
+    "include-all": true,
+    "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/chatgpt.svg"
   },
   // {
   //   ...customDefaultProxyGroups,
@@ -346,7 +363,8 @@ const customRuleProviders = {
 const excludeProxyGroup = ["Proxy", "Auto", "♻️自动选择", "🔯故障转移", "Final"];
 const otherProxyGroup1 = ["Proxies"];
 const otherProxyGroup2 = ["Microsoft", "Apple", "Bilibili"];
-const otherProxyGroup3 = ["OpenAI", "PayPal"];
+const otherProxyGroup3 = ["OpenAI"];
+const otherProxyGroup4 = ["PayPal"];
 
 // 程序入口
 function main(config, profileName) {
@@ -374,6 +392,14 @@ function main(config, profileName) {
           });
         }
         else if (otherProxyGroup3.includes(group["name"])) {
+          Object.assign(group, {
+            ...groupBaseOption,
+            "name": group["name"],
+            "type": "select",
+            "proxies": ["AI"]
+          });
+        }
+        else if (otherProxyGroup4.includes(group["name"])) {
           Object.assign(group, {
             ...groupBaseOption,
             "name": group["name"],
