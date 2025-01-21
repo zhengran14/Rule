@@ -5,6 +5,7 @@ var DNS2 = "202.106.46.151";
 
 // 自定义规则配置
 const customRules = [
+  "DOMAIN-SUFFIX,freedomstu.com,Proxy",
   "DOMAIN-SUFFIX,chuyu.me,Proxy",
   "DOMAIN-SUFFIX,minisforum.com,Proxy",
   "DOMAIN-SUFFIX,winiso.com,Proxy",
