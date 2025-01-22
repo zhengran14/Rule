@@ -5,6 +5,10 @@ var DNS2 = "202.106.46.151";
 
 // 自定义规则配置
 const customRules = [
+  "DOMAIN-SUFFIX,golang.google.cn,Proxy",
+  "DOMAIN-SUFFIX,buduanwang.vip,Proxy",
+  "DOMAIN-SUFFIX,linux.do,Proxy",
+  "DOMAIN-SUFFIX,diyforfun.cn,Proxy",
   "DOMAIN-SUFFIX,sandai.net,DIRECT",
   "DOMAIN-SUFFIX,joplinapp.org,Proxy",
   "DOMAIN-SUFFIX,freedomstu.com,Proxy",
