@@ -1,0 +1,37 @@
+# NAME: MyProxy
+# AUTHOR: rabbit
+# REPO: https://github.com/zhengran14/Rule
+# UPDATED: 
+# DOMAIN: 
+# DOMAIN-SUFFIX: 
+# TOTAL: 
+payload:
+  - DOMAIN-SUFFIX,dl.google.com
+  - DOMAIN-SUFFIX,golang.google.cn
+  - DOMAIN-SUFFIX,buduanwang.vip
+  - DOMAIN-SUFFIX,linux.do
+  - DOMAIN-SUFFIX,diyforfun.cn
+  - DOMAIN-SUFFIX,joplinapp.org
+  - DOMAIN-SUFFIX,freedomstu.com
+  - DOMAIN-SUFFIX,chuyu.me
+  - DOMAIN-SUFFIX,minisforum.com
+  - DOMAIN-SUFFIX,winiso.com
+  - DOMAIN-SUFFIX,techpowerup.com
+  - DOMAIN-SUFFIX,mediaarea.net
+  - DOMAIN-SUFFIX,pushkeen.ai
+  - DOMAIN-SUFFIX,tabnine.com
+  - DOMAIN-SUFFIX,omnivore.app
+  - DOMAIN-SUFFIX,vcpkg.link
+  - DOMAIN-SUFFIX,codeproject.com
+  - DOMAIN-SUFFIX,plex.tv
+  - DOMAIN-SUFFIX,metacubex.one
+  - DOMAIN-SUFFIX,clashverge.dev
+  - DOMAIN-SUFFIX,ipleak.net
+  - DOMAIN-SUFFIX,whatismyipaddress.com
+  - DOMAIN-SUFFIX,ipaddress.my
+  - DOMAIN-SUFFIX,ipv6-test.com
+  - DOMAIN-SUFFIX,parsec.app
+  - DOMAIN-SUFFIX,vsassets.io
+  - DOMAIN-SUFFIX,cmacked.com
+  - DOMAIN-SUFFIX,fliqlo.com
+  - DOMAIN-SUFFIX,stripe.com
