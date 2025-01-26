@@ -337,25 +337,25 @@ const customRuleProviders = {
   "MyReject": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://gitee.com/zhengran14/Rule/raw/main/MyReject.yaml",
+    "url": "https://cdn.jsdelivr.net/gh/zhengran14/Rule@main/MyReject.yaml",
     "path": "./ruleset/MyReject.yaml",
   },
   "MyProxy": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://gitee.com/zhengran14/Rule/raw/main/MyProxy.yaml",
+    "url": "https://cdn.jsdelivr.net/gh/zhengran14/Rule@main/MyProxy.yaml",
     "path": "./ruleset/MyProxy.yaml",
   },
   "MyDirect": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://gitee.com/zhengran14/Rule/raw/main/MyDirect.yaml",
+    "url": "https://cdn.jsdelivr.net/gh/zhengran14/Rule@main/MyDirect.yaml",
     "path": "./ruleset/MyDirect.yaml",
   },
   "MyAI": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://gitee.com/zhengran14/Rule/raw/main/MyAI.yaml",
+    "url": "https://cdn.jsdelivr.net/gh/zhengran14/Rule@main/MyAI.yaml",
     "path": "./ruleset/MyAI.yaml",
   },
 }
