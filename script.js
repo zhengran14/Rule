@@ -5,10 +5,10 @@ var DNS2 = "202.106.46.151";
 
 // 自定义规则配置
 const customRules = [
-  "DOMAIN-SUFFIX,chatgpt.com,AI",
   "RULE-SET,MyDirect,DIRECT",
   "RULE-SET,MyProxy,Proxy",
   "RULE-SET,MyReject,REJECT",
+  "RULE-SET,MyAI,AI",
   "RULE-SET,Lan,DIRECT",
   "RULE-SET,Direct,DIRECT",
   "RULE-SET,Advertising_Classical,广告过滤",
@@ -351,6 +351,12 @@ const customRuleProviders = {
     "behavior": "classical",
     "url": "https://gitee.com/zhengran14/Rule/raw/main/MyDirect.yaml",
     "path": "./ruleset/MyDirect.yaml",
+  },
+  "MyAI": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://gitee.com/zhengran14/Rule/raw/main/MyAI.yaml",
+    "path": "./ruleset/MyAI.yaml",
   },
 }
 
