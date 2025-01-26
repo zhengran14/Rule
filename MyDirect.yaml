@@ -11,3 +11,4 @@ payload:
   - DOMAIN-SUFFIX,parallels.cn
   - DOMAIN-SUFFIX,ccmdls.adobe.com
   - DOMAIN-SUFFIX,qt.io
+  - DOMAIN-SUFFIX,jsdelivr.net
