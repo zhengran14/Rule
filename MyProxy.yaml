@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,bugutv.org
   - DOMAIN-SUFFIX,filezilla-project.org
   - DOMAIN-SUFFIX,dl.google.com
   - DOMAIN-SUFFIX,golang.google.cn
