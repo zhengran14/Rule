@@ -433,6 +433,8 @@ function main(config, profileName) {
   config["dns"]["fake-ip-filter"] = [
     "rrabbit.xyz",
     "+.rrabbit.xyz",
+    "p.com",
+    "d.com",
     // 本地主机/设备
     "+.lan",
     "+.local",
