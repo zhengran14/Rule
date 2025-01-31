@@ -368,50 +368,51 @@ const otherProxyGroup4 = ["PayPal"];
 
 // 程序入口
 function main(config, profileName) {
-  config["proxy-groups"] = config["proxy-groups"]
-    .filter(group => {
-      if ("name" in group) {
-        // 如果需要排除的组名，返回 false，表示移除该元素
-        if (excludeProxyGroup.includes(group["name"])) {
-          return false;
-        }
-        if (otherProxyGroup1.includes(group["name"])) {
-          Object.assign(group, {
-            ...groupBaseOption,
-            "name": group["name"],
-            "type": "select",
-            "proxies": ["Proxy", "DIRECT"]
-          });
-        }
-        else if (otherProxyGroup2.includes(group["name"])) {
-          Object.assign(group, {
-            ...groupBaseOption,
-            "name": group["name"],
-            "type": "select",
-            "proxies": ["DIRECT", "Proxy"]
-          });
-        }
-        else if (otherProxyGroup3.includes(group["name"])) {
-          Object.assign(group, {
-            ...groupBaseOption,
-            "name": group["name"],
-            "type": "select",
-            "proxies": ["AI"]
-          });
-        }
-        else if (otherProxyGroup4.includes(group["name"])) {
-          Object.assign(group, {
-            ...groupBaseOption,
-            "name": group["name"],
-            "type": "select",
-            "proxies": ["美国选择", "Proxy"]
-          });
-        }
-      }
+  // config["proxy-groups"] = config["proxy-groups"]
+  //   .filter(group => {
+  //     if ("name" in group) {
+  //       // 如果需要排除的组名，返回 false，表示移除该元素
+  //       if (excludeProxyGroup.includes(group["name"])) {
+  //         return false;
+  //       }
+  //       if (otherProxyGroup1.includes(group["name"])) {
+  //         Object.assign(group, {
+  //           ...groupBaseOption,
+  //           "name": group["name"],
+  //           "type": "select",
+  //           "proxies": ["Proxy", "DIRECT"]
+  //         });
+  //       }
+  //       else if (otherProxyGroup2.includes(group["name"])) {
+  //         Object.assign(group, {
+  //           ...groupBaseOption,
+  //           "name": group["name"],
+  //           "type": "select",
+  //           "proxies": ["DIRECT", "Proxy"]
+  //         });
+  //       }
+  //       else if (otherProxyGroup3.includes(group["name"])) {
+  //         Object.assign(group, {
+  //           ...groupBaseOption,
+  //           "name": group["name"],
+  //           "type": "select",
+  //           "proxies": ["AI"]
+  //         });
+  //       }
+  //       else if (otherProxyGroup4.includes(group["name"])) {
+  //         Object.assign(group, {
+  //           ...groupBaseOption,
+  //           "name": group["name"],
+  //           "type": "select",
+  //           "proxies": ["美国选择", "Proxy"]
+  //         });
+  //       }
+  //     }
 
-      // 默认保留该元素
-      return true;
-    });
+  //     // 默认保留该元素
+  //     return true;
+  //   });
+  config["proxy-groups"] = [];
 
   // config["proxy-groups"].unshift({
   //   ...customDefaultProxyGroups,
@@ -420,12 +421,14 @@ function main(config, profileName) {
   config["proxy-groups"].unshift(...customProxyGroups);
 
   config["rule-providers"] = customRuleProviders;
+  config["rules"] = [];
   config["rules"].unshift(...customRules);
-  for (let i in config["rules"]) {
-    if (config["rules"][i].startsWith("MATCH")) {
-      config["rules"][i] = "MATCH,漏网之鱼";
-    }
-  }
+  // for (let i in config["rules"]) {
+  //   if (config["rules"][i].startsWith("MATCH")) {
+  //     config["rules"][i] = "MATCH,漏网之鱼";
+  //   }
+  // }
+  config["rules"].push("MATCH,漏网之鱼");
 
   config["dns"]["enable"] = true;
   config["dns"]["use-system-hosts"] = true;
