@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,twitter.com
   - DOMAIN-SUFFIX,x.com
   - DOMAIN-SUFFIX,mxwljsq.xyz
   - DOMAIN-SUFFIX,mxwljsq.com
