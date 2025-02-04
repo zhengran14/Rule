@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,rrabbit.xyz
   - DOMAIN-SUFFIX,proxy.com
   - DOMAIN-SUFFIX,p.com
   - DOMAIN-SUFFIX,d.com
