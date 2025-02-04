@@ -438,6 +438,7 @@ function main(config, profileName) {
     "+.rrabbit.xyz",
     "p.com",
     "d.com",
+    "proxy.com",
     // 本地主机/设备
     "+.lan",
     "+.local",
