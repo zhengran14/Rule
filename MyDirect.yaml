@@ -6,6 +6,9 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,proxy.com
+  - DOMAIN-SUFFIX,p.com
+  - DOMAIN-SUFFIX,d.com
   - DOMAIN-SUFFIX,sandai.net
   - DOMAIN-SUFFIX,parallels.com
   - DOMAIN-SUFFIX,parallels.cn
