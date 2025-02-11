@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,download.pytorch.org
   - DOMAIN-SUFFIX,hf.co
   - DOMAIN-SUFFIX,cloudflarestorage.com
   - DOMAIN-SUFFIX,rrabbit.xyz
