@@ -9,7 +9,6 @@ const customRules = [
   "RULE-SET,MyProxy,Proxy",
   "RULE-SET,MyReject,REJECT",
   "RULE-SET,MyAI,AI",
-  "RULE-SET,Lan,DIRECT",
   "RULE-SET,Direct,DIRECT",
   "RULE-SET,Advertising_Classical,广告过滤",
   "RULE-SET,Download,DIRECT",
@@ -38,6 +37,7 @@ const customRules = [
   "RULE-SET,Gog,Proxy",
   "RULE-SET,GlobalMedia_Classical,Proxy",
   "RULE-SET,Global_Classical,Proxy",
+  "RULE-SET,Lan,DIRECT",
   "GEOIP,LAN,DIRECT",
   "GEOIP,CN,DIRECT"
 ];
