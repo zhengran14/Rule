@@ -6,6 +6,8 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,githubusercontent.com
+  - DOMAIN-SUFFIX,syncthing.net
   - DOMAIN-SUFFIX,moonlight-stream.com
   - DOMAIN-SUFFIX,handleopenurl.com
   - DOMAIN-SUFFIX,mrcroxx.com
