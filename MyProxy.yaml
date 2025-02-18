@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,moonlight-stream.com
   - DOMAIN-SUFFIX,handleopenurl.com
   - DOMAIN-SUFFIX,mrcroxx.com
   - DOMAIN-SUFFIX,opve.cn
