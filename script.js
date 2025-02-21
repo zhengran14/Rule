@@ -74,7 +74,7 @@ const customProxyGroups = [
     "interval": 300,
     "include-all": true,
     "filter": "香港",
-    "exclude-filter": "1\.5",
+    "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
     "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
   },
   {
@@ -85,7 +85,7 @@ const customProxyGroups = [
     "interval": 300,
     "include-all": true,
     "filter": "美国",
-    "exclude-filter": "1\.5",
+    "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
     "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png"
   },
   {
@@ -95,7 +95,7 @@ const customProxyGroups = [
     "interval": 300,
     "include-all": true,
     "filter": "日本",
-    "exclude-filter": "1\.5",
+    "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
     "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png"
   },
   {
@@ -104,7 +104,7 @@ const customProxyGroups = [
     "interval": 300,
     "include-all": true,
     "filter": "新加坡",
-    "exclude-filter": "1\.5",
+    "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
     "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png"
   },
   {
@@ -119,14 +119,14 @@ const customProxyGroups = [
   //   ...customDefaultProxyGroups,
   //   "name": "香港自动",
   //   "filter": "香港",
-  //   "exclude-filter": "1\.5",
+  //   "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
   //   "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
   // },
   // {
   //   ...customDefaultProxyGroups,
   //   "name": "美国自动",
   //   "filter": "美国",
-  //   "exclude-filter": "1\.5",
+  //   "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
   //   "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png"
   // },
   {
