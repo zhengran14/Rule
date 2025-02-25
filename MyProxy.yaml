@@ -6,6 +6,9 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,unicornplatform.com
+  - DOMAIN-SUFFIX,b-cdn.net
+  - DOMAIN-SUFFIX,planbesim.com
   - DOMAIN-SUFFIX,archive.org
   - DOMAIN-SUFFIX,githubusercontent.com
   - DOMAIN-SUFFIX,syncthing.net
