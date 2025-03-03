@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,nstudy.org
   - DOMAIN-SUFFIX,switchesim.com
   - DOMAIN-SUFFIX,unicornplatform.com
   - DOMAIN-SUFFIX,b-cdn.net
