@@ -6,6 +6,9 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,owncloud.com
+  - DOMAIN-SUFFIX,meimei1314.xyz
+  - DOMAIN-SUFFIX,immich.cloud
   - DOMAIN-SUFFIX,nstudy.org
   - DOMAIN-SUFFIX,switchesim.com
   - DOMAIN-SUFFIX,unicornplatform.com
