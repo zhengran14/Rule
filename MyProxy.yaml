@@ -6,6 +6,8 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,seafile.com
+  - DOMAIN-SUFFIX,nextcloud.com
   - DOMAIN-SUFFIX,termius.com
   - DOMAIN-SUFFIX,owncloud.com
   - DOMAIN-SUFFIX,meimei1314.xyz
