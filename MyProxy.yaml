@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,customeriomail.com
   - DOMAIN-SUFFIX,seafile.com
   - DOMAIN-SUFFIX,nextcloud.com
   - DOMAIN-SUFFIX,termius.com
