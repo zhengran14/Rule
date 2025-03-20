@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,rclone.org
   - DOMAIN-SUFFIX,rclone.cn
   - DOMAIN-SUFFIX,winfsp.dev
   - DOMAIN-SUFFIX,customeriomail.com
