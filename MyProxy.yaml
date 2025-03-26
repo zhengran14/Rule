@@ -6,6 +6,8 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,karabiner-elements.pqrs.org
+  - DOMAIN-SUFFIX,appstorrent.ru
   - DOMAIN-SUFFIX,rclone.org
   - DOMAIN-SUFFIX,rclone.cn
   - DOMAIN-SUFFIX,winfsp.dev
