@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,githubassets.com
   - DOMAIN-SUFFIX,karabiner-elements.pqrs.org
   - DOMAIN-SUFFIX,appstorrent.ru
   - DOMAIN-SUFFIX,rclone.org
