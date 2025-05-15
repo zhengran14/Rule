@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,juejin.cn
   - DOMAIN-SUFFIX,gitee.com
   - DOMAIN-SUFFIX,download.pytorch.org
   - DOMAIN-SUFFIX,hf.co
