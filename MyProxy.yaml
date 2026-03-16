@@ -6,6 +6,14 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,league-funny.com
+  - DOMAIN-SUFFIX,askubuntu.com
+  - DOMAIN-SUFFIX,upscayl.org
+  - DOMAIN-SUFFIX,research.net
+  - DOMAIN-SUFFIX,residentevil.com
+  - DOMAIN-SUFFIX,unraid.net
+  - DOMAIN-SUFFIX,invisionsetup.com
+  - DOMAIN-SUFFIX,pentaxforums.com
   - DOMAIN-SUFFIX,githubassets.com
   - DOMAIN-SUFFIX,karabiner-elements.pqrs.org
   - DOMAIN-SUFFIX,appstorrent.ru
