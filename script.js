@@ -1,12 +1,11 @@
 var routerIP = "192.168.50.1";
-var DNS1 = "202.106.195.68";
-var DNS2 = "202.106.46.151";
-// var DNS1 = "223.5.5.5";
-// var DNS2 = "114.114.114.114";
+var DNS1 = "192.168.50.1";
+var DNS2 = "114.114.114.114";
 
 
 // 自定义规则配置
 const customRules = [
+  "DOMAIN-SUFFIX,shadowsocks.nz,Proxy",
   "RULE-SET,MyDirect,DIRECT",
   "RULE-SET,MyProxy,Proxy",
   "RULE-SET,MyReject,REJECT",
@@ -66,7 +65,7 @@ const customProxyGroups = [
     "type": "select",
     "proxies": ["香港选择", "美国选择", "日本选择", "新加坡选择", "DIRECT"],
     "include-all": true,
-    "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg"
+    "icon": "https://xget.???.win/gh/clash-verge-rev/clash-verge-rev.github.io/raw/refs/heads/main/docs/assets/icons/adjust.svg"
   },
   {
     ...customDefaultProxyGroups,
@@ -77,7 +76,7 @@ const customProxyGroups = [
     "include-all": true,
     "filter": "香港",
     "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
-    "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+    "icon": "https://xget.???.win/gh/Koolson/Qure/raw/refs/heads/master/IconSet/Color/Hong_Kong.png"
   },
   {
     ...customDefaultProxyGroups,
@@ -88,7 +87,7 @@ const customProxyGroups = [
     "include-all": true,
     "filter": "美国",
     "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
-    "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png"
+    "icon": "https://xget.???.win/gh/Koolson/Qure/raw/refs/heads/master/IconSet/Color/United_States.png"
   },
   {
     ...customDefaultProxyGroups,
@@ -98,7 +97,7 @@ const customProxyGroups = [
     "include-all": true,
     "filter": "日本",
     "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
-    "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png"
+    "icon": "https://xget.???.win/gh/Koolson/Qure/raw/refs/heads/master/IconSet/Color/Japan.png"
   },
   {
     ...customDefaultProxyGroups,
@@ -107,7 +106,7 @@ const customProxyGroups = [
     "include-all": true,
     "filter": "新加坡",
     "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
-    "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png"
+    "icon": "https://xget.???.win/gh/Koolson/Qure/raw/refs/heads/master/IconSet/Color/Singapore.png"
   },
   {
     ...groupBaseOption,
@@ -115,35 +114,35 @@ const customProxyGroups = [
     "type": "select",
     "proxies": ["美国选择", "新加坡选择", "香港选择", "日本选择", "Proxy", "DIRECT"],
     "include-all": true,
-    "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/chatgpt.svg"
+    "icon": "https://xget.???.win/gh/clash-verge-rev/clash-verge-rev.github.io/raw/refs/heads/main/docs/assets/icons/chatgpt.svg"
   },
   // {
   //   ...customDefaultProxyGroups,
   //   "name": "香港自动",
   //   "filter": "香港",
   //   "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
-  //   "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+  //   "icon": "https://xget.???.win/gh/Koolson/Qure/raw/refs/heads/master/IconSet/Color/Hong_Kong.png"
   // },
   // {
   //   ...customDefaultProxyGroups,
   //   "name": "美国自动",
   //   "filter": "美国",
   //   "exclude-filter": "1\.5|0\.1x|[^.][3-9]x",
-  //   "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png"
+  //   "icon": "https://xget.???.win/gh/Koolson/Qure/raw/refs/heads/master/IconSet/Color/United_States.png"
   // },
   {
     ...groupBaseOption,
     "name": "广告过滤",
     "type": "select",
     "proxies": ["REJECT", "DIRECT"],
-    "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/bug.svg"
+    "icon": "https://xget.???.win/gh/clash-verge-rev/clash-verge-rev.github.io/raw/refs/heads/main/docs/assets/icons/bug.svg"
   },
   {
     ...groupBaseOption,
     "name": "漏网之鱼",
     "type": "select",
     "proxies": ["DIRECT", "Proxy"],
-    "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/fish.svg"
+    "icon": "https://xget.???.win/gh/clash-verge-rev/clash-verge-rev.github.io/raw/refs/heads/main/docs/assets/icons/fish.svg"
   }
 ];
 // 规则集通用配置
@@ -165,199 +164,199 @@ const customRuleProviders = {
   "Lan": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Lan/Lan.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Lan/Lan.yaml",
     "path": "./ruleset/Lan.yaml",
   },
   "Direct": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Direct/Direct.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Direct/Direct.yaml",
     "path": "./ruleset/Direct.yaml",
   },
   "Advertising_Classical": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising_Classical.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Advertising/Advertising_Classical.yaml",
     "path": "./ruleset/Advertising_Classical.yaml",
   },
   "Download": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Download/Download.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Download/Download.yaml",
     "path": "./ruleset/Download.yaml",
   },
   "PrivateTracker": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PrivateTracker/PrivateTracker.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/PrivateTracker/PrivateTracker.yaml",
     "path": "./ruleset/PrivateTracker.yaml",
   },
   "ZhihuAds": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ZhihuAds/ZhihuAds.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/ZhihuAds/ZhihuAds.yaml",
     "path": "./ruleset/ZhihuAds.yaml",
   },
   "ChinaMax_Classical": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml",
     "path": "./ruleset/ChinaMax_Classical.yaml",
   },
   "Apple_Classical": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple_Classical.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Apple/Apple_Classical.yaml",
     "path": "./ruleset/Apple_Classical.yaml",
   },
   "Bing": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Bing/Bing.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Bing/Bing.yaml",
     "path": "./ruleset/Bing.yaml",
   },
   "OpenAI": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/OpenAI/OpenAI.yaml",
     "path": "./ruleset/OpenAI.yaml",
   },
   "Microsoft": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Microsoft/Microsoft.yaml",
     "path": "./ruleset/Microsoft.yaml",
   },
   "GitHub": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/GitHub/GitHub.yaml",
     "path": "./ruleset/GitHub.yaml",
   },
   "Google": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Google/Google.yaml",
     "path": "./ruleset/Google.yaml",
   },
   "Adobe": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Adobe/Adobe.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Adobe/Adobe.yaml",
     "path": "./ruleset/Adobe.yaml",
   },
   "QuickConnect": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/QuickConnect/QuickConnect.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/QuickConnect/QuickConnect.yaml",
     "path": "./ruleset/QuickConnect.yaml",
   },
   "Synology": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Synology/Synology.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Synology/Synology.yaml",
     "path": "./ruleset/Synology.yaml",
   },
   "SteamCN": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/SteamCN/SteamCN.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/SteamCN/SteamCN.yaml",
     "path": "./ruleset/SteamCN.yaml",
   },
   "Steam": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Steam/Steam.yaml",
     "path": "./ruleset/Steam.yaml",
   },
   "GameDownloadCN": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Game/GameDownloadCN/GameDownloadCN.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN.yaml",
     "path": "./ruleset/GameDownloadCN.yaml",
   },
   "Copilot": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Copilot/Copilot.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Copilot/Copilot.yaml",
     "path": "./ruleset/Copilot.yaml",
   },
   "Docker": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Docker/Docker.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Docker/Docker.yaml",
     "path": "./ruleset/Docker.yaml",
   },
   "ChinaDNS": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaDNS/ChinaDNS.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/ChinaDNS/ChinaDNS.yaml",
     "path": "./ruleset/ChinaDNS.yaml",
   },
   "DNS": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/DNS/DNS.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/DNS/DNS.yaml",
     "path": "./ruleset/DNS.yaml",
   },
   "EA": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/EA/EA.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/EA/EA.yaml",
     "path": "./ruleset/EA.yaml",
   },
   "Ubisoft": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Ubisoft/Ubisoft.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Ubisoft/Ubisoft.yaml",
     "path": "./ruleset/Ubisoft.yaml",
   },
   "2KGames": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/2KGames/2KGames.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/2KGames/2KGames.yaml",
     "path": "./ruleset/2KGames.yaml",
   },
   "Gog": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gog/Gog.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Gog/Gog.yaml",
     "path": "./ruleset/Gog.yaml",
   },
   "GlobalMedia_Classical": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml",
     "path": "./ruleset/GlobalMedia_Classical.yaml",
   },
   "Global_Classical": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global_Classical.yaml",
+    "url": "https://xget.???.win/gh/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/Global/Global_Classical.yaml",
     "path": "./ruleset/Global_Classical.yaml",
   },
   "MyReject": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/zhengran14/Rule@main/MyReject.yaml",
+    "url": "https://xget.???.win/gh/zhengran14/Rule/raw/refs/heads/main/MyReject.yaml",
     "path": "./ruleset/MyReject.yaml",
   },
   "MyProxy": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/zhengran14/Rule@main/MyProxy.yaml",
+    "url": "https://xget.???.win/gh/zhengran14/Rule/raw/refs/heads/main/MyProxy.yaml",
     "path": "./ruleset/MyProxy.yaml",
   },
   "MyDirect": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/zhengran14/Rule@main/MyDirect.yaml",
+    "url": "https://xget.???.win/gh/zhengran14/Rule/raw/refs/heads/main/MyDirect.yaml",
     "path": "./ruleset/MyDirect.yaml",
   },
   "MyAI": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/zhengran14/Rule@main/MyAI.yaml",
+    "url": "https://xget.???.win/gh/zhengran14/Rule/raw/refs/heads/main/MyAI.yaml",
     "path": "./ruleset/MyAI.yaml",
   },
 }
@@ -436,8 +435,8 @@ function main(config, profileName) {
   config["dns"]["use-system-hosts"] = true;
   config["dns"]["enhanced-mode"] = "fake-ip";
   config["dns"]["fake-ip-filter"] = [
-    "rrabbit.xyz",
-    "+.rrabbit.xyz",
+    "???.xyz",
+    "+.???.xyz",
     "p.com",
     "d.com",
     "proxy.com",
@@ -466,8 +465,8 @@ function main(config, profileName) {
   if (!("nameserver-policy" in config["dns"])) {
     config["dns"]["nameserver-policy"] = {};
   }
-  config["dns"]["nameserver-policy"]["rrabbit.xyz"] = routerIP;
-  config["dns"]["nameserver-policy"]["+.rrabbit.xyz"] = routerIP;
+  config["dns"]["nameserver-policy"]["???.xyz"] = routerIP;
+  config["dns"]["nameserver-policy"]["+.???.xyz"] = routerIP;
   config["dns"]["nameserver-policy"]["xiaoya.host"] = routerIP;
   config["dns"]["nameserver-policy"]["d.com"] = routerIP;
 
