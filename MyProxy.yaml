@@ -6,6 +6,10 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,gamer.com.tw
+  - DOMAIN-SUFFIX,nexusmods.com
+  - DOMAIN-SUFFIX,scootersoftware.com
+  - DOMAIN-SUFFIX,game8.co
   - DOMAIN-SUFFIX,1lou.me
   - DOMAIN-SUFFIX,league-funny.com
   - DOMAIN-SUFFIX,askubuntu.com
