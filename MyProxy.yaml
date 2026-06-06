@@ -6,6 +6,7 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,meshcommander.com
   - DOMAIN-SUFFIX,gamer.com.tw
   - DOMAIN-SUFFIX,nexusmods.com
   - DOMAIN-SUFFIX,scootersoftware.com
