@@ -5,7 +5,6 @@ var DNS2 = "114.114.114.114";
 
 // 自定义规则配置
 const customRules = [
-  "DOMAIN-SUFFIX,shadowsocks.nz,Proxy",
   "RULE-SET,MyDirect,DIRECT",
   "RULE-SET,MyProxy,Proxy",
   "RULE-SET,MyReject,REJECT",
