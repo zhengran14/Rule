@@ -7,3 +7,4 @@
 # TOTAL: 
 payload:
   - DOMAIN-SUFFIX,chatgpt.com
+  - DOMAIN-SUFFIX,huggingface.co
