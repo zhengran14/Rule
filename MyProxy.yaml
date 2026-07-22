@@ -6,6 +6,8 @@
 # DOMAIN-SUFFIX: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,getfancontrol.com
+  - DOMAIN-SUFFIX,ghcr.io
   - DOMAIN-SUFFIX,v2ex.com
   - DOMAIN-SUFFIX,getfancontrol.com
   - DOMAIN-SUFFIX,meshcommander.com
